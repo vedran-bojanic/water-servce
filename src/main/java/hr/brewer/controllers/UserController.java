@@ -14,7 +14,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(path = "/add")
+    @GetMapping("/add")
     public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam String email) {
         User user = new User();
         user.setName(name);
@@ -23,7 +23,7 @@ public class UserController {
         return "Saved";
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping("/all")
     public @ResponseBody Iterable<User> getAllUsers() {
         return this.userService.getAllUser();
     }
