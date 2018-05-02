@@ -11,7 +11,12 @@ public @Data class Salt {
 
     @Id
     private Integer id;
-    private String name;
-    private BigDecimal quantity;
+    private BigDecimal gypsum;
+    private BigDecimal calciumChloride;
+    private BigDecimal epsomSalt;
+    private BigDecimal calciumHydroxide;
+    private BigDecimal bakingSoda;
+    private BigDecimal canningSalt;
+    private BigDecimal acidAddition;
 
 }
