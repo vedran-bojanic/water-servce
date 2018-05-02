@@ -3,6 +3,8 @@ package hr.brewer.models;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
@@ -11,8 +13,9 @@ public @Data class Mineral {
 
     @Id
     private Integer id;
-    private String name;
+    @Enumerated(EnumType.ORDINAL)
+    private MineralName name;
     private BigDecimal quantity;
-    private String range;
+    private String ppmRange;
 
 }
