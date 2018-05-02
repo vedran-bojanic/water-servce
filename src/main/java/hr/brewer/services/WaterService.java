@@ -2,14 +2,14 @@ package hr.brewer.services;
 
 import hr.brewer.models.Water;
 
-import java.util.List;
+import java.util.Optional;
 
 public interface WaterService {
 
-    List<Water> fetchAllStyleWater();
+    Iterable<Water> loadSavedWaters();
 
-    List<Water> loadSavedWaters();
+    Optional<Water> loadWaterById(Integer id);
 
-    void insertWater(int id, Water water);
+    void insertWater(Integer id, Water water);
 
 }

@@ -1,42 +1,38 @@
 package hr.brewer.services;
 
 import hr.brewer.models.Water;
+import hr.brewer.repositories.BeerStyleRepository;
+import hr.brewer.repositories.WaterRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Optional;
 
 @Component
 public class WaterServiceImpl implements WaterService {
 
-    static List<Water> waters;
+    private WaterRepository waterRepository;
+    private BeerStyleRepository beerStyleRepository;
 
-    static {
-        Water paleAle = new Water();
-        paleAle.setId(1);
-        paleAle.getCalcium().setRange("50-150");
-        paleAle.getMagnesium().setRange("0-30");
-        paleAle.getAlkalinity().setRange("40-120");
-        paleAle.getSulfate().setRange("100-400");
-        paleAle.getChloride().setRange("0-100");
-        paleAle.getSodium().setRange("< 100");
-        paleAle.getAlkalinity().setRange("(-)30-30");
-        paleAle.setColor("10-28");
-        waters = Arrays.asList(paleAle);
+    @Autowired
+    public WaterServiceImpl(WaterRepository waterRepository, BeerStyleRepository beerStyleRepository) {
+        this.waterRepository = waterRepository;
+        this.beerStyleRepository = beerStyleRepository;
     }
 
     @Override
-    public List<Water> fetchAllStyleWater() {
-        return waters;
+    public Iterable<Water> loadSavedWaters() {
+        return this.waterRepository.findAll();
     }
 
     @Override
-    public List<Water> loadSavedWaters() {
-        return null;
+    public Optional<Water> loadWaterById(Integer id) {
+        return this.waterRepository.findById(id);
     }
 
     @Override
-    public void insertWater(int id, Water water) {
+    public void insertWater(Integer id, Water water) {
 
     }
+
 }

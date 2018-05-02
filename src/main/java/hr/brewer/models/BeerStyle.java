@@ -12,6 +12,13 @@ public @Data class BeerStyle {
     private Integer id;
     private String bjcpStyleId;
     private String name;
-    private String ppmRange;
+    private String calciumRange;
+    private String magnesiumRange;
+    private String alkalinityRange;
+    private String sulfateRange;
+    private String chlorideRange;
+    private String sodiumRange;
+    private String residualAlkalinityRange;
+    private String color;
 
 }
