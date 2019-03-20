@@ -22,9 +22,9 @@ public class WaterController {
         this.beerStyleService = beerStyleService;
     }
 
-    @GetMapping("beerStyle")
-    public Iterable<BeerStyle> fetchAllStyleWater() {
-        return this.beerStyleService.fetchAllStyleWater();
+    @GetMapping("beerstyle")
+    public Iterable<BeerStyle> fetchBeerStyleWaters() {
+        return this.beerStyleService.fetchBeerStyleWaters();
     }
 
     @GetMapping("water")

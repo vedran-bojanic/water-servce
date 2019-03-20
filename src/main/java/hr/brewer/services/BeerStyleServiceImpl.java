@@ -16,7 +16,7 @@ public class BeerStyleServiceImpl implements BeerStyleService {
     }
 
     @Override
-    public Iterable<BeerStyle> fetchAllStyleWater() {
+    public Iterable<BeerStyle> fetchBeerStyleWaters() {
         return this.beerStyleRepository.findAll();
     }
 

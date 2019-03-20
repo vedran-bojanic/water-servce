@@ -4,6 +4,6 @@ import hr.brewer.models.BeerStyle;
 
 public interface BeerStyleService {
 
-    Iterable<BeerStyle> fetchAllStyleWater();
+    Iterable<BeerStyle> fetchBeerStyleWaters();
 
 }
