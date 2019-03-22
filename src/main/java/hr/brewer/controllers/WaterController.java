@@ -22,12 +22,12 @@ public class WaterController {
         this.beerStyleService = beerStyleService;
     }
 
-    @GetMapping("beerstyle")
+    @GetMapping("beerstyles")
     public Iterable<BeerStyle> fetchBeerStyleWaters() {
         return this.beerStyleService.fetchBeerStyleWaters();
     }
 
-    @GetMapping("water")
+    @GetMapping("waters")
     public Iterable<Water> loadSavedWaters() {
         return this.waterService.loadSavedWaters();
     }
