@@ -3,7 +3,6 @@ package hr.brewer.models;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 public @Data class Water {
@@ -16,18 +15,14 @@ public @Data class Water {
 
     @OneToOne
     @JoinColumn(name = "id")
-    private Mineral sourceWaterData;
-
-    private BigDecimal targetResidualAlkalinity;
-    private BigDecimal mashWaterVolume;
-    private BigDecimal dilutionRate;
+    private WaterReport waterReport;
 
     @OneToOne
     @JoinColumn(name = "id")
-    private Salt saltAdditions;
+    private GrainBill grainBill;
 
     @OneToOne
     @JoinColumn(name = "id")
-    private SpargeWater spargeWater;
+    private WaterAdjustment waterAdjustment;
 
 }
