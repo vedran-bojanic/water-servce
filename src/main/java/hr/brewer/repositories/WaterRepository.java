@@ -1,6 +1,6 @@
 package hr.brewer.repositories;
 
 import hr.brewer.models.Water;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface WaterRepository extends CrudRepository<Water, Integer> { }
+public interface WaterRepository extends JpaRepository<Water, Long> { }

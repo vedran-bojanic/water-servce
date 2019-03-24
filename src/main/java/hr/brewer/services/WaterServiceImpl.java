@@ -1,38 +1,41 @@
 package hr.brewer.services;
 
+import hr.brewer.exceptions.WaterNotFoundException;
 import hr.brewer.models.Water;
-import hr.brewer.repositories.BeerStyleRepository;
 import hr.brewer.repositories.WaterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
+import java.util.List;
 
 @Component
 public class WaterServiceImpl implements WaterService {
 
     private WaterRepository waterRepository;
-    private BeerStyleRepository beerStyleRepository;
 
     @Autowired
-    public WaterServiceImpl(WaterRepository waterRepository, BeerStyleRepository beerStyleRepository) {
+    public WaterServiceImpl(WaterRepository waterRepository) {
         this.waterRepository = waterRepository;
-        this.beerStyleRepository = beerStyleRepository;
     }
 
     @Override
-    public Iterable<Water> loadSavedWaters() {
+    public List<Water> loadSavedWaters() {
         return this.waterRepository.findAll();
     }
 
     @Override
-    public Optional<Water> loadWaterById(Integer id) {
-        return this.waterRepository.findById(id);
+    public Water loadWaterById(Long id) {
+        return this.waterRepository.findById(id)
+                .orElseThrow(() -> new WaterNotFoundException(id));
     }
 
     @Override
-    public void insertWater(Integer id, Water water) {
-
+    public void insertWater(Water water) {
+        this.waterRepository.save(water);
     }
 
+    @Override
+    public void deleteWater(Long id) {
+        this.waterRepository.deleteById(id);
+    }
 }

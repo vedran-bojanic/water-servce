@@ -9,12 +9,12 @@ import javax.persistence.Id;
 public @Data class IncreasePhSalts {
 
     @Id
-    private Integer id;
-    private Integer epsomSalt;
-    private Integer calciumChloride;
-    private Integer gypsum;
-    private Integer showGypsum;
-    private Integer showCalciumChloride;
-    private Integer showEpsomSalt;
+    private Long id;
+    private Integer slakedLime;
+    private Integer bakingSoda;
+    private Integer chalk;
+    private Integer showSlakedLime;
+    private Integer showBakingSoda;
+    private Integer showChalk;
 
 }

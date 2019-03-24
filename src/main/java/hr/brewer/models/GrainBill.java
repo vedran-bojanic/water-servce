@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public @Data class GrainBill {
 
     @Id
-    private Integer id;
+    private Long id;
     private ArrayList<Grain> grains;
     private Integer mashThickness;
     private Integer totalGrainWeight;

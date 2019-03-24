@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public @Data class BeerStyle {
 
     @Id
-    private Integer id;
+    private Long id;
     private String bjcpStyleId;
     private String name;
     private String calciumRange;

@@ -9,8 +9,8 @@ import javax.persistence.Id;
 public @Data class DecreasePhAcid {
 
     @Id
-    private Integer id;
-    private Integer decreasePhAcid;
+    private Long id;
+    private Integer lacticAcid;
     private Integer acidulatedMalt;
 
 }

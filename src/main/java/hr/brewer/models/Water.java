@@ -9,9 +9,10 @@ public @Data class Water {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
+    @Column(name = "beerStyleId", nullable=false)
+    private Integer beerStyleId;
     private String name;
-    private String bjcpStyleId;
 
     @OneToOne
     @JoinColumn(name = "id")
@@ -25,4 +26,18 @@ public @Data class Water {
     @JoinColumn(name = "id")
     private WaterAdjustment waterAdjustment;
 
+    @OneToOne
+    @JoinColumn(name = "beerStyleId", insertable=false, updatable=false)
+    private BeerStyle beerStyle;
+
+    public Water() { }
+
+    public Water(Integer beerStyleId, String name, WaterReport waterReport, GrainBill grainBill, WaterAdjustment waterAdjustment, BeerStyle beerStyle) {
+        this.beerStyleId = beerStyleId;
+        this.name = name;
+        this.waterReport = waterReport;
+        this.grainBill = grainBill;
+        this.waterAdjustment = waterAdjustment;
+        this.beerStyle = beerStyle;
+    }
 }

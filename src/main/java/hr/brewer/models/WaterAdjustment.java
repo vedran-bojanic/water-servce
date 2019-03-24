@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public @Data class WaterAdjustment {
 
     @Id
-    private Integer id;
+    private Long id;
     @OneToOne
     @JoinColumn(name = "id")
     private DecreasePhSalts decreasePhSaltsMash;

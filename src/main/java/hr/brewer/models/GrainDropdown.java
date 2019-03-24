@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public @Data class GrainDropdown {
 
     @Id
-    private Integer id;
+    private Long id;
     private String name;
     private Integer pH;
     private Integer type;

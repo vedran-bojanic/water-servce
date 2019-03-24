@@ -5,6 +5,8 @@ import hr.brewer.repositories.BeerStyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BeerStyleServiceImpl implements BeerStyleService {
 
@@ -16,7 +18,7 @@ public class BeerStyleServiceImpl implements BeerStyleService {
     }
 
     @Override
-    public Iterable<BeerStyle> fetchBeerStyleWaters() {
+    public List<BeerStyle> fetchBeerStyleWaters() {
         return this.beerStyleRepository.findAll();
     }
 

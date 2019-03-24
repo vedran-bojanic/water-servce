@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public @Data class WaterReport {
 
     @Id
-    private Integer id;
+    private Long id;
     private Integer calcium;
     private Integer magnesium;
     private Integer sodium;

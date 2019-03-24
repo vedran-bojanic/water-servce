@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public @Data class Grain {
 
     @Id
-    private Integer id;
+    private Long id;
     private Integer grainId;
     private Integer name;
     private Integer weight;
