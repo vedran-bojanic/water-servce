@@ -19,7 +19,7 @@ public class WaterServiceImpl implements WaterService {
     }
 
     @Override
-    public List<Water> loadSavedWaters() {
+    public List<Water> loadAllWaters() {
         return this.waterRepository.findAll();
     }
 
@@ -30,8 +30,26 @@ public class WaterServiceImpl implements WaterService {
     }
 
     @Override
-    public void insertWater(Water water) {
+    public void saveWater(Water water) {
         this.waterRepository.save(water);
+    }
+
+    @Override
+    public Water editWater(Water newWater, Long id) {
+
+        return this.waterRepository.findById(id)
+                .map(water -> {
+                    water.setName(newWater.getName());
+                    water.setBeerStyleId(newWater.getBeerStyleId());
+                    water.setWaterReport(newWater.getWaterReport());
+                    water.setGrainBill(newWater.getGrainBill());
+                    water.setWaterAdjustment(newWater.getWaterAdjustment());
+                    return this.waterRepository.save(water);
+                })
+                .orElseGet(() -> {
+                   newWater.setId(id);
+                   return this.waterRepository.save(newWater);
+                });
     }
 
     @Override

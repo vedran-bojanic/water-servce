@@ -19,8 +19,8 @@ public class WaterController {
     }
 
     @GetMapping("/waters")
-    public List<Water> loadSavedWaters() {
-        return this.waterService.loadSavedWaters();
+    public List<Water> loadAllWaters() {
+        return this.waterService.loadAllWaters();
     }
 
     @GetMapping("/waters/{id}")
@@ -30,7 +30,12 @@ public class WaterController {
 
     @PostMapping("/waters")
     public void insertWater(@RequestBody Water water) {
-        this.waterService.insertWater(water);
+        this.waterService.saveWater(water);
+    }
+
+    @PutMapping("/waters/{id}")
+    Water editWater(@RequestBody Water water, @PathVariable Long id) {
+        return this.waterService.editWater(water, id);
     }
 
     @DeleteMapping("/waters/{id}")

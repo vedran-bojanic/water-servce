@@ -6,11 +6,13 @@ import java.util.List;
 
 public interface WaterService {
 
-    List<Water> loadSavedWaters();
+    List<Water> loadAllWaters();
 
     Water loadWaterById(Long id);
 
-    void insertWater(Water water);
+    void saveWater(Water water);
+
+    Water editWater(Water water, Long id);
 
     void deleteWater(Long id);
 
