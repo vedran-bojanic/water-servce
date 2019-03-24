@@ -8,25 +8,27 @@ import javax.persistence.*;
 public @Data class Water {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="waterId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "beerStyleId", nullable=false)
-    private Integer beerStyleId;
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @Column(name = "beerStyleId", nullable=false)
+    private Integer beerStyleId;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private WaterReport waterReport;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private GrainBill grainBill;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private WaterAdjustment waterAdjustment;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "beerStyleId", insertable=false, updatable=false)
     private BeerStyle beerStyle;
 

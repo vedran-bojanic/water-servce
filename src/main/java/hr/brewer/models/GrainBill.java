@@ -2,16 +2,17 @@ package hr.brewer.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.ArrayList;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public @Data class GrainBill {
 
     @Id
-    private Long id;
-    private ArrayList<Grain> grains;
+    @GeneratedValue
+    private Long waterId;
+    @OneToMany(targetEntity=Grain.class, cascade=CascadeType.ALL)
+    private List<Grain> grains;
     private Integer mashThickness;
     private Integer totalGrainWeight;
 

@@ -2,30 +2,28 @@ package hr.brewer.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public @Data class WaterAdjustment {
 
     @Id
-    private Long id;
-    @OneToOne
-    @JoinColumn(name = "id")
+    @GeneratedValue
+    private Long waterId;
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private DecreasePhSalts decreasePhSaltsMash;
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private DecreasePhSalts decreasePhSaltsSparge;
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private DecreasePhAcid decreasePhAcid;
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private IncreasePhSalts increasePhSaltsMash;
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "waterId")
     private IncreasePhSalts increasePhSaltsSparge;
 
 }

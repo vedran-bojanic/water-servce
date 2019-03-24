@@ -3,18 +3,20 @@ package hr.brewer.models;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public @Data class DecreasePhSalts {
 
     @Id
-    private Long id;
+    @GeneratedValue
+    private Long waterId;
     private Integer epsomSalt;
     private Integer calciumChloride;
     private Integer gypsum;
-    private Integer showGypsum;
-    private Integer showCalciumChloride;
-    private Integer showEpsomSalt;
+    private boolean showGypsum;
+    private boolean showCalciumChloride;
+    private boolean showEpsomSalt;
 
 }
