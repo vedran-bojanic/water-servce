@@ -2,17 +2,15 @@ package hr.brewer.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 public @Data class WaterReport {
 
     @Id
-    @GeneratedValue
-    private Long waterId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private BigDecimal calcium;
     private BigDecimal magnesium;
     private BigDecimal sodium;
