@@ -43,4 +43,9 @@ public class WaterController {
         this.waterService.deleteWater(id);
     }
 
+    @DeleteMapping("/waters")
+    void deleteAllWaters() {
+        this.waterService.deleteAllWaters();
+    }
+
 }

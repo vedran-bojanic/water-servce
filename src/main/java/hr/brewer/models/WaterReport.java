@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public @Data class WaterReport {
@@ -12,15 +13,15 @@ public @Data class WaterReport {
     @Id
     @GeneratedValue
     private Long waterId;
-    private Integer calcium;
-    private Integer magnesium;
-    private Integer sodium;
-    private Integer chloride;
-    private Integer sulfate;
-    private Integer alkalinity;
-    private Integer mashVolume;
-    private Integer spargeVolume;
-    private Integer mashRoPercentage;
-    private Integer spargeRoPercentage;
+    private BigDecimal calcium;
+    private BigDecimal magnesium;
+    private BigDecimal sodium;
+    private BigDecimal chloride;
+    private BigDecimal sulfate;
+    private BigDecimal alkalinity;
+    private BigDecimal mashVolume;
+    private BigDecimal spargeVolume;
+    private BigDecimal mashRoPercentage;
+    private BigDecimal spargeRoPercentage;
 
 }

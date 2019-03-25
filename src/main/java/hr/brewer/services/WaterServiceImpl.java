@@ -56,4 +56,9 @@ public class WaterServiceImpl implements WaterService {
     public void deleteWater(Long id) {
         this.waterRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteAllWaters() {
+        this.waterRepository.deleteAll();
+    }
 }

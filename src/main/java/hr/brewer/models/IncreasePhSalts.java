@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public @Data class IncreasePhSalts {
@@ -12,9 +13,9 @@ public @Data class IncreasePhSalts {
     @Id
     @GeneratedValue
     private Long waterId;
-    private Integer slakedLime;
-    private Integer bakingSoda;
-    private Integer chalk;
+    private BigDecimal slakedLime;
+    private BigDecimal bakingSoda;
+    private BigDecimal chalk;
     private boolean showSlakedLime;
     private boolean showBakingSoda;
     private boolean showChalk;

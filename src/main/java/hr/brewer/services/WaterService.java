@@ -16,4 +16,6 @@ public interface WaterService {
 
     void deleteWater(Long id);
 
+    void deleteAllWaters();
+
 }

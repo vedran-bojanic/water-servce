@@ -3,6 +3,7 @@ package hr.brewer.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 public @Data class Grain {
@@ -11,10 +12,10 @@ public @Data class Grain {
     @GeneratedValue
     private Long waterId;
     private Integer id;
-    private Integer name;
-    private Integer weight;
-    private Integer color;
+    private String name;
+    private BigDecimal weight;
+    private BigDecimal color;
     @OneToOne
     private GrainDropdown grainDropdown;
-    private Integer crystalPh;
+    private BigDecimal crystalPh;
 }

@@ -28,7 +28,7 @@ public @Data class Water {
     @JoinColumn(name = "waterId")
     private WaterAdjustment waterAdjustment;
 
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "beerStyleId", insertable=false, updatable=false)
     private BeerStyle beerStyle;
 
