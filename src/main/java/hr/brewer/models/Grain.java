@@ -12,18 +12,20 @@ public @Data class Grain {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long grainPosition;
+
     private String name;
 
     private BigDecimal weight;
 
     private BigDecimal color;
 
-    @Column(name = "grainDropdownId")
-    private Integer grainDropdownId;
+    @Column(name = "grainTypeId")
+    private Integer grainTypeId;
 
     @OneToOne
-    @JoinColumn(name = "grainDropdownId", insertable=false, updatable=false)
-    private GrainDropdown grainDropdown;
+    @JoinColumn(name = "grainTypeId", insertable=false, updatable=false)
+    private GrainType grainType;
 
     private BigDecimal crystalPh;
 }

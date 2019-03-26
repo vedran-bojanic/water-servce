@@ -1,6 +1,6 @@
 package hr.brewer.controllers;
 
-import hr.brewer.models.GrainDropdown;
+import hr.brewer.models.GrainType;
 import hr.brewer.services.GrainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class GrainController {
     }
 
     @GetMapping("/grains")
-    public List<GrainDropdown> loadAllGrains() {
+    public List<GrainType> loadAllGrains() {
         return this.grainService.loadAllGrains();
     }
 }

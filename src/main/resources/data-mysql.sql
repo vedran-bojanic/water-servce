@@ -73,15 +73,15 @@ INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_ra
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (71, '40-120', '19B', '50-100', '50-150', '16-44', '0-30', 'English Barleywine', '0-60', '<100', '50-100');
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (72, '40-120', '19C', '50-100', '50-150', '20-38', '0-30', 'American Barleywine', '0-60', '<100', '50-100');
 
-DROP TABLE db_water.grain_dropdown;
-CREATE TABLE db_water.grain_dropdown (id bigint, name varchar(20), pH decimal(4,2), type integer);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (1, '2-ROW', 5.70, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (2, '6-ROW', 5.79, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (3, 'MARIS OTTER', 5.77, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (4, 'MUNICH', 5.43, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (5, 'PILSNER', 5.75, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (6, 'WHEAT', 6.04, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (7, 'VIENNA', 5.56, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (8, 'OTHER', 5.70, 1);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (9, 'CRYSTAL', null, 2);
-INSERT INTO db_water.grain_dropdown (id, name, pH, type) VALUES (10, 'ROASTED', 5.70, 3);
+DROP TABLE db_water.grain_type;
+CREATE TABLE db_water.grain_type (id bigint, name varchar(20), pH decimal(4,2), malt_type integer);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (1, '2-ROW', 5.70, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (2, '6-ROW', 5.79, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (3, 'MARIS OTTER', 5.77, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (4, 'MUNICH', 5.43, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (5, 'PILSNER', 5.75, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (6, 'WHEAT', 6.04, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (7, 'VIENNA', 5.56, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (8, 'OTHER', 5.70, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (9, 'CRYSTAL', null, 2);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (10, 'ROASTED', 5.70, 3);
