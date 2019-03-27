@@ -9,13 +9,23 @@ import java.math.BigDecimal;
 public @Data class Grain {
 
     @Id
-    @GeneratedValue
-    private Long waterId;
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long grainPosition;
+
     private String name;
+
     private BigDecimal weight;
+
     private BigDecimal color;
+
+    @Column(name = "grainTypeId")
+    private Integer grainTypeId;
+
     @OneToOne
-    private GrainDropdown grainDropdown;
+    @JoinColumn(name = "grainTypeId", insertable=false, updatable=false)
+    private GrainType grainType;
+
     private BigDecimal crystalPh;
 }

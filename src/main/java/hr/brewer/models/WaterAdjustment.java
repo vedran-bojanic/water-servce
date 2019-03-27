@@ -8,22 +8,27 @@ import javax.persistence.*;
 public @Data class WaterAdjustment {
 
     @Id
-    @GeneratedValue
-    private Long waterId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @JoinColumn(unique = true)
     private DecreasePhSalts decreasePhSaltsMash;
+
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @JoinColumn(unique = true)
     private DecreasePhSalts decreasePhSaltsSparge;
+
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @JoinColumn(unique = true)
     private DecreasePhAcid decreasePhAcid;
+
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @JoinColumn(unique = true)
     private IncreasePhSalts increasePhSaltsMash;
+
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @JoinColumn(unique = true)
     private IncreasePhSalts increasePhSaltsSparge;
 
 }

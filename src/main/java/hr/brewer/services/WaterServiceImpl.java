@@ -42,7 +42,7 @@ public class WaterServiceImpl implements WaterService {
                     water.setName(newWater.getName());
                     water.setBeerStyleId(newWater.getBeerStyleId());
                     water.setWaterReport(newWater.getWaterReport());
-                    water.setGrainBill(newWater.getGrainBill());
+                    water.setGrains(newWater.getGrains());
                     water.setWaterAdjustment(newWater.getWaterAdjustment());
                     return this.waterRepository.save(water);
                 })

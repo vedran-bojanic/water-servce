@@ -3,29 +3,30 @@ package hr.brewer.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public @Data class Water {
 
     @Id
-    @Column(name="waterId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     @Column(name = "beerStyleId", nullable=false)
     private Integer beerStyleId;
 
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @JoinColumn(unique = true)
     private WaterReport waterReport;
 
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
-    private GrainBill grainBill;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "water_id")
+    private List<Grain> grains;
 
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "waterId")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
     private WaterAdjustment waterAdjustment;
 
     @OneToOne
@@ -34,12 +35,8 @@ public @Data class Water {
 
     public Water() { }
 
-    public Water(Integer beerStyleId, String name, WaterReport waterReport, GrainBill grainBill, WaterAdjustment waterAdjustment, BeerStyle beerStyle) {
+    public Water(Integer beerStyleId, String name) {
         this.beerStyleId = beerStyleId;
         this.name = name;
-        this.waterReport = waterReport;
-        this.grainBill = grainBill;
-        this.waterAdjustment = waterAdjustment;
-        this.beerStyle = beerStyle;
     }
 }

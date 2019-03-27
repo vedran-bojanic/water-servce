@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
-public @Data class GrainDropdown {
+public @Data class GrainType {
 
     @Id
     private Long id;
     private String name;
     private BigDecimal pH;
-    private Integer type;
+    private Integer maltType;
 
     @JsonProperty("pH")
     public BigDecimal getpH() {
