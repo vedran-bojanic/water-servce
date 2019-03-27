@@ -1,5 +1,5 @@
 DROP TABLE db_water.beer_style;
-CREATE TABLE db_water.beer_style (id smallint, alkalinity_range varchar(30), bjcp_style_id varchar(4), calcium_range varchar(10), chloride_range varchar(10), magnesium_range varchar(10), sodium_range varchar(10), sulfate_range varchar(10), color varchar(10), name varchar(30), residual_alkalinity_range varchar(30) );
+CREATE TABLE db_water.beer_style (id bigint, alkalinity_range varchar(30), bjcp_style_id varchar(4), calcium_range varchar(10), chloride_range varchar(10), magnesium_range varchar(10), sodium_range varchar(10), sulfate_range varchar(10), color varchar(10), name varchar(30), residual_alkalinity_range varchar(30) );
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (1, '0-40', '1A', '50-60', '50-100', '4-6', '0-30', 'Lite American Lager', '(-)60-0', '<100', '0-50');
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (2, '0-40', '1B', '50-60', '50-100', '4-8', '0-30', 'Standard American', '(-)60-0', '<100', '0-50');
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (3, '0-40', '1C', '50-75', '50-100', '4-12', '0-30', 'Premium American', '(-)60-0', '<100', '50-150');
@@ -72,3 +72,16 @@ INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_ra
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (70, '40-120', '19A', '50-100', '50-150', '20-44', '0-30', 'Old Ale', '0-60', '<100', '50-100');
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (71, '40-120', '19B', '50-100', '50-150', '16-44', '0-30', 'English Barleywine', '0-60', '<100', '50-100');
 INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_range, chloride_range, color, magnesium_range, name, residual_alkalinity_range, sodium_range, sulfate_range) VALUES (72, '40-120', '19C', '50-100', '50-150', '20-38', '0-30', 'American Barleywine', '0-60', '<100', '50-100');
+
+DROP TABLE db_water.grain_type;
+CREATE TABLE db_water.grain_type (id bigint, name varchar(20), pH decimal(4,2), malt_type integer);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (1, 'PALE', 5.70, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (2, '6-ROW', 5.79, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (3, 'MARIS OTTER', 5.77, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (4, 'MUNICH', 5.43, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (5, 'PILSNER', 5.75, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (6, 'WHEAT', 6.04, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (7, 'VIENNA', 5.56, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (8, 'OTHER', 5.70, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (9, 'CRYSTAL', null, 2);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (10, 'ROASTED', 5.70, 3);
