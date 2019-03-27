@@ -75,7 +75,7 @@ INSERT INTO db_water.beer_style (id, alkalinity_range, bjcp_style_id, calcium_ra
 
 DROP TABLE db_water.grain_type;
 CREATE TABLE db_water.grain_type (id bigint, name varchar(20), pH decimal(4,2), malt_type integer);
-INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (1, '2-ROW', 5.70, 1);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (1, 'PALE', 5.70, 1);
 INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (2, '6-ROW', 5.79, 1);
 INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (3, 'MARIS OTTER', 5.77, 1);
 INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (4, 'MUNICH', 5.43, 1);
