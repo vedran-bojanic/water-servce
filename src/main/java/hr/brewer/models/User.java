@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public @Data class User {
@@ -18,5 +19,9 @@ public @Data class User {
     @Column
     @JsonIgnore
     private String password;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "water_id")
+    private List<Water> waterId;
 
 }

@@ -12,6 +12,8 @@ public @Data class Water {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long userId;
+
     private String name;
 
     @Column(name = "beerStyleId", nullable=false)
