@@ -8,6 +8,8 @@ public interface WaterService {
 
     List<Water> loadAllWaters();
 
+    List<Water> loadAllWatersForUser(Long id);
+
     Water loadWaterById(Long id);
 
     void saveWater(Water water);

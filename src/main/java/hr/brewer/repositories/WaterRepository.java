@@ -3,4 +3,10 @@ package hr.brewer.repositories;
 import hr.brewer.models.Water;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface WaterRepository extends JpaRepository<Water, Long> { }
+import java.util.List;
+
+public interface WaterRepository extends JpaRepository<Water, Long> {
+
+    List<Water> findWatersByUserId(Long id);
+
+}

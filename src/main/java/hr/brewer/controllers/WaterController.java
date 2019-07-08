@@ -1,7 +1,6 @@
 package hr.brewer.controllers;
 
 import hr.brewer.models.Water;
-import hr.brewer.services.BeerStyleService;
 import hr.brewer.services.WaterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +13,8 @@ public class WaterController {
     private WaterService waterService;
 
     @Autowired
-    public WaterController(WaterService waterService, BeerStyleService beerStyleService) {
+    public WaterController(WaterService waterService) {
         this.waterService = waterService;
-    }
-
-    @GetMapping("/waters")
-    public List<Water> loadAllWaters() {
-        return this.waterService.loadAllWaters();
     }
 
     @GetMapping("/waters/{id}")
@@ -28,9 +22,9 @@ public class WaterController {
         return this.waterService.loadWaterById(id);
     }
 
-    @PostMapping("/waters")
-    public void insertWater(@RequestBody Water water) {
-        this.waterService.saveWater(water);
+    @GetMapping("/water/users/{id}")
+    public List<Water> loadAllWatersForUser(@PathVariable Long id) {
+        return this.waterService.loadAllWatersForUser(id);
     }
 
     @PutMapping("/waters/{id}")
@@ -41,6 +35,16 @@ public class WaterController {
     @DeleteMapping("/waters/{id}")
     void deleteWater(@PathVariable Long id) {
         this.waterService.deleteWater(id);
+    }
+
+    @GetMapping("/waters")
+    public List<Water> loadAllWaters() {
+        return this.waterService.loadAllWaters();
+    }
+
+    @PostMapping("/waters")
+    public void insertWater(@RequestBody Water water) {
+        this.waterService.saveWater(water);
     }
 
     @DeleteMapping("/waters")
