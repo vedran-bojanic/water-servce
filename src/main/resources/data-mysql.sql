@@ -84,4 +84,4 @@ INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (6, 'WHEAT', 6.
 INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (7, 'VIENNA', 5.56, 1);
 INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (8, 'OTHER', 5.70, 1);
 INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (9, 'CRYSTAL', null, 2);
-INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (10, 'ROASTED', 5.70, 3);
+INSERT INTO db_water.grain_type (id, name, pH, malt_type) VALUES (10, 'ROASTED', 4.71, 3);
